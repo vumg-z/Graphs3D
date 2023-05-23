@@ -1,0 +1,99 @@
+[
+    {
+        "id": "Uriel Mendoza",
+        "followers": [
+            "Ana Martínez",
+            "Francisco González",
+            "Sergio Torres",
+            "logic"
+        ]
+    },
+    {
+        "id": "José Pérez",
+        "followers": [
+            "María Rodríguez",
+            "Laura Ramírez"
+        ]
+    },
+    {
+        "id": "María Rodríguez",
+        "followers": [
+            "Carlos García",
+            "Patricia López",
+            "Laura Ramírez",
+            "Sergio Torres",
+            "Francisco González",
+            "Juan Hernández",
+            "Ana Martínez",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "Juan Hernández",
+        "followers": [
+            "María Rodríguez"
+        ]
+    },
+    {
+        "id": "Ana Martínez",
+        "followers": [
+            "María Rodríguez",
+            "Sergio Torres",
+            "Laura Ramírez",
+            "Carlos García",
+            "Juan Hernández",
+            "José Pérez",
+            "Patricia López"
+        ]
+    },
+    {
+        "id": "Carlos García",
+        "followers": [
+            "Ana Martínez",
+            "Patricia López",
+            "Juan Hernández",
+            "María Rodríguez",
+            "José Pérez",
+            "Laura Ramírez"
+        ]
+    },
+    {
+        "id": "Patricia López",
+        "followers": [
+            "Juan Hernández",
+            "Ana Martínez",
+            "Sergio Torres",
+            "María Rodríguez"
+        ]
+    },
+    {
+        "id": "Francisco González",
+        "followers": [
+            "Juan Hernández",
+            "Ana Martínez"
+        ]
+    },
+    {
+        "id": "Laura Ramírez",
+        "followers": [
+            "Patricia López",
+            "Sergio Torres",
+            "Ana Martínez",
+            "Juan Hernández",
+            "María Rodríguez",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "Sergio Torres",
+        "followers": [
+            "Ana Martínez",
+            "Juan Hernández",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "logic",
+        "followers": []
+    }
+]
