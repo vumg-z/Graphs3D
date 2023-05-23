@@ -94,10 +94,7 @@
     },
     {
         "id": "logic",
-        "followers": ["canser"]
-    },
-    {
-        "id":"canser",
-        "followers":[]
+        "followers": []
     }
+    
 ]

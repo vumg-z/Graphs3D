@@ -1,0 +1,150 @@
+[
+    {
+        "id": "Uriel Mendoza",
+        "followers": [
+            "Ana Martínez",
+            "Francisco González",
+            "Sergio Torres",
+            "logic"
+        ]
+    },
+    {
+        "id": "José Pérez",
+        "followers": [
+            "María Rodríguez",
+            "Laura Ramírez"
+        ]
+    },
+    {
+        "id": "María Rodríguez",
+        "followers": [
+            "Carlos García",
+            "Patricia López",
+            "Laura Ramírez",
+            "Sergio Torres",
+            "Francisco González",
+            "Juan Hernández",
+            "Ana Martínez",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "Juan Hernández",
+        "followers": [
+            "María Rodríguez"
+        ]
+    },
+    {
+        "id": "Ana Martínez",
+        "followers": [
+            "María Rodríguez",
+            "Sergio Torres",
+            "Laura Ramírez",
+            "Carlos García",
+            "Juan Hernández",
+            "José Pérez",
+            "Patricia López"
+        ]
+    },
+    {
+        "id": "Carlos García",
+        "followers": [
+            "Ana Martínez",
+            "Patricia López",
+            "Juan Hernández",
+            "María Rodríguez",
+            "José Pérez",
+            "Laura Ramírez"
+        ]
+    },
+    {
+        "id": "Patricia López",
+        "followers": [
+            "Juan Hernández",
+            "Ana Martínez",
+            "Sergio Torres",
+            "María Rodríguez"
+        ]
+    },
+    {
+        "id": "Francisco González",
+        "followers": [
+            "Juan Hernández",
+            "Ana Martínez"
+        ]
+    },
+    {
+        "id": "Laura Ramírez",
+        "followers": [
+            "Patricia López",
+            "Sergio Torres",
+            "Ana Martínez",
+            "Juan Hernández",
+            "María Rodríguez",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "Sergio Torres",
+        "followers": [
+            "Ana Martínez",
+            "Juan Hernández",
+            "José Pérez"
+        ]
+    },
+    {
+        "id": "logic",
+        "followers": [
+            "John Smith",
+            "Sarah Johnson",
+            "Robert Williams",
+            "Mary Brown",
+            "James Jones",
+            "Patricia Miller",
+            "William Davis",
+            "Linda Garcia",
+            "Richard Martinez",
+            "Elizabeth Robinson"
+        ]
+    },
+    {
+        "id": "John Smith",
+        "followers": ["logic", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Sarah Johnson",
+        "followers": ["logic", "John Smith", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Robert Williams",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Mary Brown",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "James Jones",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Patricia Miller",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "William Davis", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "William Davis",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "Linda Garcia", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Linda Garcia",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Richard Martinez", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Richard Martinez",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Elizabeth Robinson"]
+    },
+    {
+        "id": "Elizabeth Robinson",
+        "followers": ["logic", "John Smith", "Sarah Johnson", "Robert Williams", "Mary Brown", "James Jones", "Patricia Miller", "William Davis", "Linda Garcia", "Richard Martinez"]
+    }
+]

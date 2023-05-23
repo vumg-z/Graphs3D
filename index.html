@@ -17,8 +17,8 @@
       position: absolute;
       width: calc(100% - 24%);
       height: calc(100% - 24%);
-      top: 12%;
-      left: 12%;
+      top: 5%;
+      left: 5%;
       background-color: white;
     }
 
@@ -42,47 +42,56 @@
 
 <body>
   <div id="graph-container"></div>
+  <div>
+    <input type="file" id="file-input" style="display: none;" accept=".json" />
+    <button id="file-button">Añadir</button>
+  </div>
+
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
 
   <script>
 
+    // Variables globales para la simulación y los SVG
+    let linkLines, nodeCircles, textLabels;
+    let simulation;
+
     const graphContainer = d3.select('#graph-container');
     const width = graphContainer.node().getBoundingClientRect().width;
     const height = graphContainer.node().getBoundingClientRect().height;
 
-    const simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id(d => d.id).distance(100))
-      .force("charge", d3.forceManyBody().strength(-200))
-      .force("center", d3.forceCenter(width / 2, height / 2));
-
-    const svg = graphContainer
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-    // Carga los datos desde personas.json
-    d3.json("./personas.json").then(data => {
+    // Función para actualizar el gráfico
+    function updateGraph(data) {
       const links = data.flatMap(d => d.followers.map(f => ({ source: d.id, target: f })));
       const nodes = data.map(d => ({ id: d.id }));
+
+      simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(d => d.id).distance(100))
+        .force("charge", d3.forceManyBody().strength(-200))
+        .force("center", d3.forceCenter(width / 2, height / 2));
+
+      const svg = graphContainer
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
 
       simulation.nodes(nodes);
       simulation.force("link").links(links);
 
-      const linkLines = svg.selectAll("line")
+      linkLines = svg.selectAll("line")
         .data(links)
         .enter()
         .append("line")
         .attr("stroke", "black");
 
-      const nodeCircles = svg.selectAll("circle")
+      nodeCircles = svg.selectAll("circle")
         .data(nodes)
         .enter()
         .append("circle")
         .attr("r", 10)
         .call(drag(simulation));
 
-      const text = svg.selectAll("text")
+      textLabels = svg.selectAll("text")
         .data(nodes)
         .enter()
         .append("text")
@@ -101,37 +110,76 @@
           .attr("cx", d => d.x)
           .attr("cy", d => d.y);
 
-        text
+        textLabels
           .attr("x", d => d.x)
           .attr("y", d => d.y);
       });
 
       simulation.alpha(1).restart();
 
-      function drag(simulation) {
-        function dragstarted(event) {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          event.subject.fx = event.subject.x;
-          event.subject.fy = event.subject.y;
-        }
+      bfs(nodes[0].id);
+    }
 
-        function dragged(event) {
-          event.subject.fx = event.x;
-          event.subject.fy = event.y;
-        }
+    // Carga los datos desde personas.json por defecto
+    d3.json("personas.json").then(updateGraph);
 
-        function dragended(event) {
-          if (!event.active) simulation.alphaTarget(0);
-          event.subject.fx = null;
-          event.subject.fy = null;
-        }
+    // Handler para el botón
+    d3.select("#file-button").on("click", function () {
+      d3.select("#file-input").node().click();
+    });
 
-        return d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended);
+    // Handler para el input de archivo
+    d3.select("#file-input").on("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const newPersonas = JSON.parse(e.target.result);
+          graphContainer.selectAll("svg").remove(); // Limpiamos el svg anterior
+          updateGraph(newPersonas); // Función para actualizar el grafo
+        };
+        reader.readAsText(file);
       }
-    })();
+    });
+
+    function drag(simulation) {
+      function dragstarted(event) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;
+      }
+
+      function dragged(event) {
+        event.subject.fx = event.x;
+        event.subject.fy = event.y;
+      }
+
+      function dragended(event) {
+        if (!event.active) simulation.alphaTarget(0);
+        event.subject.fx = null;
+        event.subject.fy = null;
+      }
+
+      return d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+    }
+
+    function bfs(rootId) {
+      let visitedNodes = [];
+      let queue = [rootId];
+
+      while (queue.length > 0) {
+        let currentId = queue.shift();
+        if (!visitedNodes.includes(currentId)) {
+          visitedNodes.push(currentId);
+          let followers = simulation.nodes().find(n => n.id === currentId).followers;
+          queue.push(...followers);
+          nodeCircles.filter(n => n.id === currentId).classed("visited", true);
+        }
+      }
+    }
 
   </script>
 </body>
