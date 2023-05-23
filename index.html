@@ -15,8 +15,8 @@
 
     #graph-container {
       position: absolute;
-      width: calc(100% - 24%);
-      height: calc(100% - 24%);
+      width: calc(100% - 0%);
+      height: calc(100% - 0%);
       top: 5%;
       left: 5%;
       background-color: white;
@@ -62,8 +62,8 @@
 
     // Función para actualizar el gráfico
     function updateGraph(data) {
-      const links = data.flatMap(d => d.followers.map(f => ({ source: d.id, target: f })));
-      const nodes = data.map(d => ({ id: d.id }));
+      const links = data.flatMap(d => d.followers.map(f => ({source: d.id, target: f})));
+      const nodes = data.map(d => ({id: d.id}));
 
       simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(d => d.id).distance(100))
