@@ -62,7 +62,7 @@
       .attr("height", height);
 
     // Carga los datos desde personas.json
-    d3.json("personas.json").then(data => {
+    d3.json("./personas.json").then(data => {
       const links = data.flatMap(d => d.followers.map(f => ({ source: d.id, target: f })));
       const nodes = data.map(d => ({ id: d.id }));
 
