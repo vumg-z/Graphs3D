@@ -66,10 +66,15 @@
     const width = graphContainer.node().getBoundingClientRect().width;
     const height = graphContainer.node().getBoundingClientRect().height;
 
+    let followersMap = {};
     // Función para actualizar el gráfico
     function updateGraph(data) {
       const links = data.flatMap(d => d.followers.map(f => ({ source: d.id, target: f })));
       const nodes = data.map(d => ({ id: d.id }));
+
+      data.forEach(d => {
+        followersMap[d.id] = d.followers;
+      });
 
       simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(d => d.id).distance(100))
@@ -186,8 +191,8 @@
           if (!visitedNodes.includes(currentId)) {
             visitedNodes.push(currentId);
 
-            let currentNode = simulation.nodes().find(n => n.id === currentId);
-            let followers = currentNode.followers;
+            // Usa el mapa de seguidores para obtener la lista de seguidores del nodo actual
+            let followers = followersMap[currentId];
             queue.push(...followers);
 
             nodeCircles.filter(n => n.id === currentId).style("fill", "green");
