@@ -69,7 +69,7 @@
     // Función para actualizar el gráfico
     function updateGraph(data) {
       const links = data.flatMap(d => d.followers.map(f => ({ source: d.id, target: f })));
-      const nodes = data.map(d => ({ id: d.id, followers: d.followers }));
+      const nodes = data.map(d => ({ id: d.id }));
 
       simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(d => d.id).distance(100))
