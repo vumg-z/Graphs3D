@@ -1,0 +1,110 @@
+
+A )
+
+{
+    "keys": [-33, 26, 53],
+    "children": [
+      {
+        "keys": [-99, -88, -87, -53],
+        "children": null
+      },
+      {
+        "keys": [-27, -16, 7, 25],
+        "children": null
+      },
+      {
+        "keys": [36, 42],
+        "children": null
+      }
+    ]
+}
+
+B )
+
+{
+    "keys": [-27, 26],
+    "children": [
+      {
+        "keys": [-99, -88, -87, -53],
+        "children": null
+      },
+      {
+        "keys": [-33, -16, 7, 25],
+        "children": null
+      },
+      {
+        "keys": [36, 42, 53],
+        "children": null
+      }
+    ]
+}
+
+C )
+
+{
+    "keys": [-87, -27, 25],
+    "children": [
+      {
+        "keys": [-99, -88],
+        "children": null
+      },
+      {
+        "keys": [-53, -33],
+        "children": null
+      },
+      {
+        "keys": [-16, 7],
+        "children": null
+      },
+      {
+        "keys": [26, 36, 42, 53],
+        "children": null
+      }
+    ]
+}
+
+D )
+
+{
+    "keys": [-87, -27, 25],
+    "children": [
+      {
+        "keys": [-99, -88],
+        "children": null
+      },
+      {
+        "keys": [-53, -33],
+        "children": null
+      },
+      {
+        "keys": [-16, 7],
+        "children": null
+      },
+      {
+        "keys": [26, 36, 42, 53],
+        "children": null
+      }
+    ]
+}
+
+D) 
+
+{
+    "keys": [-33, -25],
+    "children": [
+      {
+        "keys": [-99, -88, -87, -53],
+        "children": null
+      },
+      {
+        "keys": [-27, -16,7],
+        "children": null
+      },
+      {
+        "keys": [26, 36, 42, 53],
+        "children": null
+      }
+   
+    ]
+}
+

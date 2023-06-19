@@ -1,0 +1,43 @@
+{
+    "value": 4,
+    "color": "black",
+    "left": {
+      "value": 2,
+      "color": "red",
+      "left": {
+        "value": 1,
+        "color": "black",
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "value": 3,
+        "color": "black",
+        "left": null,
+        "right": null
+      }
+    },
+    "right": {
+      "value": 6,
+      "color": "red",
+      "left": {
+        "value": 5,
+        "color": "black",
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "value": 8,
+        "color": "black",
+        "left": null,
+        "right": {
+            "value": 9,
+            "color": "red",
+            "left": null,
+            "right": null
+        }
+      }
+    }
+  }
+
+  
